@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run react\"",
+    "react": "cd react_node && npm start",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
